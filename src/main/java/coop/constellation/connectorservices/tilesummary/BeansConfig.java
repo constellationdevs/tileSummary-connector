@@ -4,10 +4,6 @@ import com.xtensifi.connectorservices.common.logging.ConnectorLogging;
 import coop.constellation.connectorservices.tilesummary.helpers.StdoutConnectorLogging;
 import coop.constellation.connectorservices.tilesummary.helpers.EnhancedConnectorLogging;
 
-import com.xtensifi.connectorservices.common.workflow.ConnectorConfig;
-import com.xtensifi.connectorservices.common.workflow.ConnectorHubService;
-import com.xtensifi.connectorservices.common.workflow.ConnectorHubServiceImpl;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -25,17 +21,6 @@ public class BeansConfig {
     // objectMapper.enable(DeserializationFeature.USE_BIG_DECIMAL_FOR_FLOATS);
     // return objectMapper;
     // }
-
-    @Bean
-    ConnectorHubService connectorHubService() {
-        return new ConnectorHubServiceImpl();
-    }
-
-    @Bean
-    ConnectorConfig connectorConfig() {
-        return new ConnectorConfig();
-    }
-
 
     // You can use this bean by running the app with a Spring profile called "local"
     @Bean

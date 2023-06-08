@@ -18,7 +18,7 @@
 
 ## Running connector locally
 - Build Connector - 
-  - Download and install the "ServiceCommon" project from the developers portal documents and resources.
+  - Download and install the "ServicesCommon-2.0" project from the developers portal documents and resources.
   - Open Terminal/Command Prompt: 
   - Navigate to the root of your connector project(directory with the pom.xml and src folder)
   - Enter the following commands: 

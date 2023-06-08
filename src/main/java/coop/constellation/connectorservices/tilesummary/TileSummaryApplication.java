@@ -9,9 +9,9 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 @SpringBootApplication
 @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
-public class TileSummaryConnectorApplication {
+public class TileSummaryApplication {
     
     public static void main(String[] args) {
-        SpringApplication.run(TileSummaryConnectorApplication.class, args);
+        SpringApplication.run(TileSummaryApplication.class, args);
     }
 }

@@ -4,7 +4,7 @@ from os.path import join, exists
 from shutil import rmtree, copyfile, make_archive, copytree
 import zipfile
 
-connector_name = 'ProfileConnector'
+connector_name = 'TileSummaryConnector'
 connector_version = '1.0'
 request_mapping = connector_name + '/' + connector_version
 
