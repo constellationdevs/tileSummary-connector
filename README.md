@@ -19,7 +19,7 @@ This sample code is meant to provide the basic structure of a tileSummary method
 
 ## Running connector locally
 - Build Connector - 
-  - Download and install the "ServicesCommon-2.0" project from the developers portal documents and resources.
+  - Download and install the "ServicesCommon-2.2" project from the developers portal documents and resources.
   - Open Terminal/Command Prompt: 
   - Navigate to the root of your connector project(directory with the pom.xml and src folder)
   - Enter the following commands: 
@@ -52,10 +52,7 @@ This sample code is meant to provide the basic structure of a tileSummary method
 	            "payload": {
 	                "valuePair": [{
 	                    "name": "httpMethod",
-	                    "value": "GET"
-	                }, {
-	                    "name": "resourceUrl",
-	                    "value": "/locator/proximitysearch"
+	                    "value": "POST"
 	                }]
 	            }
 	        },

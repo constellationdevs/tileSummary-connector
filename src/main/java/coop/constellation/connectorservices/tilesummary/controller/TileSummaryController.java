@@ -5,6 +5,7 @@ import com.google.gson.JsonSyntaxException;
 import com.xtensifi.dspco.ConnectorMessage;
 import com.xtensifi.dspco.ResponseStatusMessage;
 
+import coop.constellation.connectorservices.tilesummary.models.ConnectorResponse;
 import coop.constellation.connectorservices.tilesummary.models.TileSummary;
 
 import java.io.IOException;
@@ -39,6 +40,7 @@ public class TileSummaryController {
         ConnectorMessage connectorMessage = null;
         ResponseStatusMessage responseStatusMessage = new ResponseStatusMessage();
         ObjectMapper mapper = new ObjectMapper();
+        ConnectorResponse response = new ConnectorResponse();
 
         try {
             connectorMessage = mapper.readValue(connectorJson, ConnectorMessage.class);
@@ -49,9 +51,11 @@ public class TileSummaryController {
             InputStream fileStream = this.getClass().getResourceAsStream(filePath);
             TileSummary ts = mapper.readValue(fileStream, TileSummary.class);
             
-            String response = mapper.writeValueAsString(ts);
+            response.setResponse(ts);
+            response.setMessage("tileSummary responded successfully.");
+            response.setSuccess(true);
 
-            connectorMessage.setResponse(response);
+            connectorMessage.setResponse(mapper.writeValueAsString(response));
 
             logger.info(connectorMessage, "TileSummary-getLocalTextFile: Response - " + response);
 
