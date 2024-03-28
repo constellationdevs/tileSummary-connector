@@ -1,0 +1,22 @@
+{
+  "PreviewTypes": ["Icon", "SummaryList", "Summary"],
+  "PreviewDefault": "SummaryList",
+  "CallOut": "CallOut",
+  "Details1": "Details 1",
+  "Details2": "Details 2",
+  "BackgroundColor": { "CDPClass": "default", "HexColor": "" },
+  "Transactions": [
+    {
+      "Title": "Title with some longer text to test wrapping",
+      "Detail": "Detail",
+      "CallOut1": "Callout1 with some more text to wrap maybe",
+      "CallOut2": "Callout2"
+    },
+    {
+      "Title": "Title",
+      "Detail": "Detail",
+      "CallOut1": "Callout1",
+      "CallOut2": "Callout2"
+    }
+  ]
+}
