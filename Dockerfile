@@ -1,4 +1,3 @@
-# Customized Docker for DataDog Agent
 FROM amazoncorretto:17-alpine-jdk
 VOLUME /d/tmp
 ARG JAR_FILE
@@ -9,6 +8,7 @@ COPY lib/dd-java-agent.jar $JAVA_HOME/lib
 COPY lib/env.sh /usr/local/bin
 ENV SERVICE_NAME {serviceName}
 ENV SERVICE_VERSION {serviceVersion}
-ENV CU All
+ENV CU ALL
+ENV JAVA_OPTS="-XX:InitialRAMPercentage=40.0 -XX:MaxRAMPercentage=55.0 -Djava.security.egd=file:/dev/./urandom"
 RUN apk --no-cache add curl
-ENTRYPOINT ["/bin/sh", "-c" , "chmod 755 /usr/local/bin/env.sh && . /usr/local/bin/env.sh && exec java -Djava.security.egd=file:/dev/./urandom $JAVA_AGENT -jar /app.jar"]
+ENTRYPOINT ["/bin/sh", "-c" , "chmod 755 /usr/local/bin/env.sh && . /usr/local/bin/env.sh && exec java $JAVA_AGENT $JAVA_OPTS -jar /app.jar"]
